@@ -149,7 +149,7 @@
   <header>
     <h1>Privacy Policy</h1>
     <p class="lead">Mismatchy &mdash; two pictures, five tiny differences, one sharp pair of eyes.</p>
-    <span class="effective">Effective date: 2026-05-14</span>
+    <span class="effective">Effective date: 2026-05-22</span>
   </header>
 
   <section class="toc">
@@ -161,10 +161,12 @@
       <li><a href="#how-we-use">How we use information</a></li>
       <li><a href="#third-parties">Third-party services</a></li>
       <li><a href="#advertising">Advertising and tracking</a></li>
+      <li><a href="#meta">Meta (Facebook &amp; Instagram) attribution</a></li>
       <li><a href="#purchases">In-app purchases</a></li>
       <li><a href="#children">Children</a></li>
       <li><a href="#your-rights">Your rights (GDPR / CCPA)</a></li>
       <li><a href="#retention">Data retention and deletion</a></li>
+      <li><a href="#delete">How to delete your data</a></li>
       <li><a href="#security">Security</a></li>
       <li><a href="#changes">Changes to this policy</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -182,11 +184,14 @@
   </p>
   <p>
     We do not have user accounts. We do not ask for your name, email,
-    or phone number. The App keeps your progress on the device. The
-    only data that leaves your device is what Apple, Google, Google
-    AdMob, and our backend (which only delivers the level catalogue,
-    never personal information) handle on our behalf for store
-    operations, ads, and content delivery &mdash; all described below.
+    or phone number. The App keeps your progress on the device. Data
+    that leaves your device goes only to the third parties that make
+    the App work: Apple or Google for store operations and payment
+    processing, Google AdMob for ads, RevenueCat for purchase
+    receipts, Meta (Facebook) for measuring whether our Instagram and
+    Facebook ad campaigns brought you to the App, and our backend
+    (which only delivers the level catalogue, never personal
+    information). Each of these flows is described in detail below.
   </p>
 
   <h2 id="what-we-collect">2. What we collect</h2>
@@ -246,6 +251,35 @@
     from AdMob.
   </p>
 
+  <h3>Purchase and entitlement data shared with RevenueCat</h3>
+  <p>
+    When you tap "Buy" on a coin pack or the No Ads / Ultimate Pack,
+    the App routes the purchase through RevenueCat, which acts as an
+    intermediary between the App and Apple's StoreKit or Google Play
+    Billing. RevenueCat receives the store transaction receipt, an
+    anonymous device-bound identifier, the product identifier, and the
+    locale-priced amount you paid. It uses this to validate the
+    receipt, sync your entitlement (for example, the No Ads upgrade)
+    across your devices on the same store account, and provide us
+    aggregate analytics. RevenueCat does not receive your card number
+    or billing address &mdash; those stay with Apple or Google.
+  </p>
+
+  <h3>Attribution events shared with Meta (Facebook &amp; Instagram)</h3>
+  <p>
+    If you arrived at the App from a Facebook or Instagram ad, Meta
+    needs to know that the ad worked. The App integrates Meta's
+    official mobile SDK to send a small set of events: app install,
+    app open, purchase (with the localized amount and currency), and
+    a few engagement milestones (completing the tutorial, reaching
+    level 10, 20, 30 &hellip;). The SDK also reads your operating
+    system's advertising identifier (IDFA on iOS, GAID on Android)
+    where you have allowed it. On iOS, the App requests permission
+    via Apple's App Tracking Transparency framework on first launch;
+    if you decline, Meta receives only privacy-preserving aggregated
+    attribution via Apple's SKAdNetwork.
+  </p>
+
   <h2 id="what-we-dont">3. What we don't collect</h2>
   <ul>
     <li>Your name, email address, phone number, or photo.</li>
@@ -253,20 +287,24 @@
     <li>Your precise GPS location.</li>
     <li>Health, financial, or biometric data.</li>
     <li>Account credentials &mdash; there are no accounts to create.</li>
-    <li>Custom analytics events tied to you personally &mdash; we run
-      no analytics SDK in the App.</li>
+    <li>Browsing history outside the App.</li>
+    <li>The content of any messages or other apps on your device.</li>
   </ul>
 
   <h2 id="how-we-use">4. How we use information</h2>
   <p>
     Local data on your device is used solely to make the App work:
     remembering your records, your language and audio preferences,
-    your coin balance, and which levels you have cleared. Backend
-    traffic is used only to deliver the level catalogue and the
-    associated puzzle images. Information that flows to Apple,
-    Google, or Google AdMob is used by them to operate the store,
-    serve and measure ads, and detect fraud. We do not sell, rent, or
-    share user-level data with anyone.
+    your coin balance, which levels you have cleared, and which
+    in-app purchases you own. Backend traffic is used only to
+    deliver the level catalogue and the associated puzzle images.
+    Information that flows to Apple, Google, Google AdMob, Meta, or
+    RevenueCat is used by them &mdash; on our behalf or as
+    independent data controllers &mdash; to operate the store,
+    process payments, serve and measure ads, attribute installs to
+    advertising campaigns, sync purchase entitlements across
+    devices, and detect fraud. We do not sell, rent, or share
+    user-level data with anyone outside this list.
   </p>
 
   <h2 id="third-parties">5. Third-party services</h2>
@@ -296,6 +334,21 @@
         <td><a href="https://support.google.com/admob/answer/9760862">support.google.com/admob/answer/9760862</a></td>
       </tr>
       <tr>
+        <td>RevenueCat</td>
+        <td>Validates in-app purchase receipts and syncs the No Ads / Ultimate Pack entitlement across devices on the same store account</td>
+        <td><a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></td>
+      </tr>
+      <tr>
+        <td>Meta Platforms (Facebook &amp; Instagram)</td>
+        <td>Measures whether our ad campaigns brought you to the App; receives install, app-open, purchase, and milestone events</td>
+        <td><a href="https://www.facebook.com/about/privacy">facebook.com/about/privacy</a></td>
+      </tr>
+      <tr>
+        <td>Apple App Tracking Transparency (iOS only)</td>
+        <td>Permission framework that gates the advertising identifier on iOS 14.5+</td>
+        <td><a href="https://www.apple.com/legal/privacy/data/en/app-tracking-transparency/">apple.com/legal/privacy/data/en/app-tracking-transparency</a></td>
+      </tr>
+      <tr>
         <td>Developer backend (rehberce.com)</td>
         <td>Delivers the level catalogue and puzzle images</td>
         <td>Operated by the Developer. Standard web logs only. No personal data collected.</td>
@@ -305,7 +358,8 @@
 
   <h2 id="advertising">6. Advertising and tracking</h2>
   <p>
-    The App shows ads from Google AdMob to support free distribution.
+    The App shows ads from Google AdMob to support free distribution
+    (unless you have purchased the No Ads or Ultimate Pack upgrade).
     Two formats appear:
   </p>
   <ul>
@@ -333,20 +387,107 @@
     presents Google's UMP consent flow. You can re-open this flow
     anytime by reinstalling the App or clearing its data.
   </p>
-
-  <h2 id="purchases">7. In-app purchases</h2>
   <p>
-    The current version of the App does not offer in-app purchases.
-    Future versions may add optional purchases (for example, removing
-    ads, coin packs, or cosmetic items). Payment processing would be
-    handled entirely by Apple or Google. We would receive only the
-    receipt of the transaction (the product identifier and purchase
-    status) so we can unlock the corresponding feature on the device.
-    We do not receive your card number, billing address, or any other
-    payment details.
+    Separately from the AdMob ads served inside the App, we also
+    <em>run</em> ad campaigns elsewhere &mdash; primarily on Facebook
+    and Instagram. The next section explains exactly what data the
+    Meta SDK sends back to Meta so those campaigns can be attributed
+    and measured.
   </p>
 
-  <h2 id="children">8. Children</h2>
+  <h2 id="meta">7. Meta (Facebook &amp; Instagram) attribution</h2>
+  <p>
+    We run Instagram and Facebook ad campaigns to find new players
+    for Mismatchy. Meta needs to know which ads actually work, so the
+    App ships Meta's official mobile measurement SDK
+    (<code>facebook_app_events</code>). The SDK sends Meta a small
+    fixed set of events:
+  </p>
+  <ul>
+    <li><strong>App install</strong> &mdash; sent once on first
+      launch, used to credit the install to the ad you clicked.</li>
+    <li><strong>App open</strong> &mdash; sent on every launch, used
+      to measure retention.</li>
+    <li><strong>Purchase</strong> &mdash; sent when an in-app purchase
+      succeeds, with the localized amount, currency, product
+      identifier, and how many coins were credited.</li>
+    <li><strong>Tutorial completion</strong> &mdash; sent the first
+      time you clear level 1.</li>
+    <li><strong>Level milestone</strong> &mdash; sent when you clear
+      level 10, 20, 30, &hellip; (every tenth level), at most once per
+      milestone per install.</li>
+  </ul>
+  <p>
+    Alongside these events, Meta receives standard mobile attribution
+    signals: the operating system's advertising identifier (IDFA on
+    iOS, GAID on Android) where you have allowed it, IP address,
+    device model, OS version, app version, and locale. We do not
+    forward your name, email, contacts, gameplay history, or any
+    sensitive data.
+  </p>
+  <p>
+    <strong>iOS &mdash; App Tracking Transparency.</strong> On iOS
+    14.5 and later, Apple gates the advertising identifier behind the
+    App Tracking Transparency framework. The App will show you the
+    standard system dialog the first time it launches. If you tap
+    <em>Allow</em>, Meta receives your IDFA. If you tap <em>Ask App
+    Not to Track</em>, Meta receives only Apple's privacy-preserving
+    SKAdNetwork postback (an aggregated, delayed signal that does not
+    identify you). You can change this choice at any time in
+    <em>Settings &rarr; Privacy &amp; Security &rarr; Tracking</em>.
+  </p>
+  <p>
+    <strong>Android.</strong> Android does not have an ATT-style
+    consent dialog at the operating-system level. You can reset or
+    delete your Advertising ID, or turn off personalised ads
+    entirely, from <em>Settings &rarr; Google &rarr; Ads</em>.
+  </p>
+  <p>
+    Meta processes the events above under its own privacy policy and
+    its
+    <a href="https://www.facebook.com/legal/terms/businesstools">Business
+    Tools Terms</a>. To exercise data-protection rights against Meta
+    directly (for example, to request deletion of attribution data
+    Meta holds about you), use the controls inside the Facebook or
+    Instagram apps under <em>Settings &rarr; Privacy</em>.
+  </p>
+
+  <h2 id="purchases">8. In-app purchases</h2>
+  <p>
+    Mismatchy offers six optional in-app purchases: three consumable
+    coin packs (75, 250, and 600 coins), a non-consumable "No Ads"
+    upgrade (with two price tiers &mdash; a launch-window introductory
+    price and the standard price), and a non-consumable Ultimate Pack
+    that bundles 1,750 coins with the No Ads upgrade. None of these
+    purchases are required to play the App.
+  </p>
+  <p>
+    Payment is processed entirely by Apple's App Store or by Google
+    Play. We do not see your card number, billing address, or any
+    payment details. The App and our intermediary (RevenueCat)
+    receive only:
+  </p>
+  <ul>
+    <li>The product identifier (for example,
+      <code>mismatchy_ultimate_pack</code>) so the App knows what to
+      unlock.</li>
+    <li>The localized amount and currency you paid, used solely to
+      tell Meta and our analytics that the purchase happened.</li>
+    <li>A store-issued purchase token used to validate the receipt
+      with Apple or Google.</li>
+    <li>An anonymous device-bound identifier issued by RevenueCat so
+      the same purchase can be restored on a new device under the
+      same store account.</li>
+  </ul>
+  <p>
+    Coin balances are kept on your device only and do <strong>not</strong>
+    survive uninstalling the App. The No Ads / Ultimate Pack
+    entitlements, however, are bound to your Apple ID or Google
+    account and can be restored on any device with the Restore
+    Purchases button inside Settings.
+  </p>
+
+  <h2 id="children">9. Children</h2>
   <p>
     Mismatchy is suitable for general audiences but is not
     specifically directed at children under the age of 13 (or the
@@ -356,7 +497,7 @@
     and we will work with the relevant platform to delete it.
   </p>
 
-  <h2 id="your-rights">9. Your rights (GDPR / CCPA)</h2>
+  <h2 id="your-rights">10. Your rights (GDPR / CCPA)</h2>
   <p>If you are a resident of the European Economic Area, the United
     Kingdom, Switzerland, or California, you have the right to:</p>
   <ul>
@@ -371,26 +512,67 @@
     directly hold about you is effectively limited to what is on your
     device and short-lived server logs. To exercise any of these
     rights against the third parties listed above (Apple, Google,
-    Google AdMob), please follow their published procedures linked
-    in section 5.
+    Google AdMob, RevenueCat, Meta), please follow their published
+    procedures linked in section 5.
   </p>
 
-  <h2 id="retention">10. Data retention and deletion</h2>
+  <h2 id="retention">11. Data retention and deletion</h2>
   <p>
     Local data on your device is retained until you uninstall the
     App or clear its storage from system settings. Backend request
-    logs are retained for up to 30 days. There is no other server
-    copy of your gameplay. To delete all local Mismatchy data:
+    logs are retained for up to 30 days. RevenueCat retains your
+    purchase history for as long as the store keeps the corresponding
+    receipt, so you can restore non-consumable purchases on a new
+    device. Meta retains attribution events under its own retention
+    policy, typically up to two years for ad-measurement purposes.
+    There is no other server copy of your gameplay.
   </p>
-  <ul>
-    <li><strong>iOS</strong>: long-press the app icon &rarr; Remove
-      App &rarr; Delete App.</li>
-    <li><strong>Android</strong>: Settings &rarr; Apps &rarr;
-      Mismatchy &rarr; Storage &rarr; Clear data, or uninstall the
-      app.</li>
-  </ul>
 
-  <h2 id="security">11. Security</h2>
+  <h2 id="delete">12. How to delete your data</h2>
+  <p>
+    Because the App does not maintain a user account, there is very
+    little personal data tied to you that needs deletion. To wipe what
+    exists, take the following steps:
+  </p>
+  <ol>
+    <li>
+      <strong>Delete the App.</strong>
+      <ul>
+        <li><strong>iOS</strong>: long-press the app icon &rarr;
+          <em>Remove App</em> &rarr; <em>Delete App</em>. This removes
+          every coin balance, record, and cached file.</li>
+        <li><strong>Android</strong>: <em>Settings &rarr; Apps &rarr;
+          Mismatchy &rarr; Storage &rarr; Clear data</em>, then
+          uninstall the app.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Revoke advertising tracking.</strong> Reset or delete
+      your IDFA (iOS: <em>Settings &rarr; Privacy &amp; Security
+      &rarr; Tracking</em>; <em>Settings &rarr; Privacy &amp;
+      Security &rarr; Apple Advertising &rarr; Personalized Ads
+      Off</em>) or your GAID (Android: <em>Settings &rarr; Google
+      &rarr; Ads &rarr; Reset/Delete advertising ID</em>).
+    </li>
+    <li>
+      <strong>Ask Meta to delete attribution data.</strong> Inside
+      the Facebook app: <em>Settings &amp; Privacy &rarr; Settings
+      &rarr; Off-Facebook activity &rarr; Manage your off-Facebook
+      activity &rarr; Clear history</em>. Mismatchy will appear in
+      the list if your install was attributed to a Meta ad.
+    </li>
+    <li>
+      <strong>Ask us to delete server-side data.</strong> Email
+      <a href="mailto:melihozkass@gmail.com">melihozkass@gmail.com</a>
+      with the subject "Delete my data &mdash; Mismatchy". Include the
+      approximate first-install date so we can locate the related
+      backend log entries. We will confirm deletion within 30 days as
+      required by GDPR Article 17. Backend logs are auto-rotated
+      after 30 days regardless.
+    </li>
+  </ol>
+
+  <h2 id="security">13. Security</h2>
   <p>
     We follow standard mobile-app security practices: data on your
     device is sandboxed by the operating system; backend, ad, and
@@ -400,7 +582,7 @@
     third-party services.
   </p>
 
-  <h2 id="changes">12. Changes to this policy</h2>
+  <h2 id="changes">14. Changes to this policy</h2>
   <p>
     We may update this Privacy Policy from time to time. The
     effective date at the top of this page reflects the most recent
@@ -408,7 +590,7 @@
     clearly when you next open the App.
   </p>
 
-  <h2 id="contact">13. Contact</h2>
+  <h2 id="contact">15. Contact</h2>
   <p>
     Questions, concerns, or requests under data-protection law can be
     sent to:
