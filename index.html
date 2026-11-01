@@ -148,8 +148,8 @@
 <main>
   <header>
     <h1>Privacy Policy</h1>
-    <p class="lead">Mismatchy &mdash; two pictures, five tiny differences, one sharp pair of eyes.</p>
-    <span class="effective">Effective date: 2026-10-30</span>
+    <p class="lead">Mismatchy &mdash; two pictures, tiny differences, one sharp pair of eyes.</p>
+    <span class="effective">Effective date: 2026-11-02</span>
   </header>
 
   <section class="toc">
@@ -188,10 +188,11 @@
     that leaves your device goes only to the third parties that make
     the App work: Apple or Google for store operations and payment
     processing, Google AdMob for ads, RevenueCat for purchase
-    receipts, Meta (Facebook) for measuring whether our Instagram and
-    Facebook ad campaigns brought you to the App, and our backend
-    (which only delivers the level catalogue, never personal
-    information). Each of these flows is described in detail below.
+    receipts, Google Firebase for crash reports and usage analytics,
+    Meta (Facebook) for measuring whether our Instagram and Facebook
+    ad campaigns brought you to the App, and our own servers (which
+    deliver the level catalogue and run the optional Online VS
+    rooms). Each of these flows is described in detail below.
   </p>
 
   <h2 id="what-we-collect">2. What we collect</h2>
@@ -229,6 +230,30 @@
     accounts.
   </p>
 
+  <h3>Online VS rooms (our realtime server)</h3>
+  <p>
+    The optional Online VS mode lets you race friends in a room. To
+    make a room work, the App connects to a realtime server operated
+    by the Developer (<code>ingilizcekonusma.com</code>) and sends:
+    the nickname you type (it is not verified and can be anything you
+    like, it is shown to the other players in your room), a random
+    player identifier the server creates so you can reconnect, the
+    room code, your votes and ready state, the messages you pick from
+    the built-in list of short taunts, and short reports that you
+    finished a round or that its timer ran out. Taps on the pictures
+    are checked on your device and are <strong>not</strong> sent to
+    the server one by one. Rooms exist in the server's memory only
+    while they are open; no account is created and no match history
+    or profile is built. The server keeps standard web-server logs
+    (request time, IP address) for diagnostics and abuse prevention.
+  </p>
+  <p>
+    If you choose to suggest a new taunt message from inside the App,
+    the text you write and your language are sent to the Developer to
+    be reviewed. If approved, the text may appear for other players
+    without your name or any other detail about you.
+  </p>
+
   <h3>Information processed by Apple or Google for store operations</h3>
   <p>
     When you install or update the App, Apple's App Store or the
@@ -260,6 +285,28 @@
     installation identifier. We use it only to find and fix bugs. The
     reports are not linked to your identity (the App has no accounts)
     and are not used for advertising or tracking.
+  </p>
+
+  <h3>Usage analytics shared with Google Firebase Analytics</h3>
+  <p>
+    The App uses Firebase Analytics (a Google service that works on
+    our behalf) to understand how the game is used and to measure
+    whether our Google Ads campaigns bring players who actually play.
+    It receives a small set of events &mdash; app open, tutorial
+    completed, a level cleared (level number and number of wrong
+    taps), every tenth level reached, a purchase (amount and
+    currency), and an Online VS match finished (number of players)
+    &mdash; together with an app-instance identifier, the advertising
+    identifier where you have allowed it, IP address (used by Google
+    for an approximate location), device model, OS and app version,
+    and language. Firebase Analytics starts only after the consent
+    step where your region requires one (EEA, UK, Switzerland); you
+    can change that choice from <em>Settings &rarr; Ad privacy
+    choices</em> in the App where it is shown, and you can reset your
+    advertising identifier in your device settings. We do not send
+    your nickname or any free text to Firebase Analytics. Data from
+    Firebase Analytics may be linked with our Google Ads account to
+    measure and improve ad campaigns.
   </p>
 
   <h3>Purchase and entitlement data shared with RevenueCat</h3>
@@ -308,7 +355,8 @@
     remembering your records, your language and audio preferences,
     your coin balance, which levels you have cleared, and which
     in-app purchases you own. Backend traffic is used only to
-    deliver the level catalogue and the associated puzzle images.
+    deliver the level catalogue and the associated puzzle images and,
+    if you use Online VS, to run the room you are in.
     Information that flows to Apple, Google, Google AdMob, Meta, or
     RevenueCat is used by them &mdash; on our behalf or as
     independent data controllers &mdash; to operate the store,
@@ -350,6 +398,11 @@
         <td><a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></td>
       </tr>
       <tr>
+        <td>Google Firebase Analytics</td>
+        <td>Usage analytics and measuring our Google Ads campaigns (app open, tutorial, level and purchase events)</td>
+        <td><a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a></td>
+      </tr>
+      <tr>
         <td>RevenueCat</td>
         <td>Validates in-app purchase receipts and syncs the No Ads / Ultimate Pack entitlement across devices on the same store account</td>
         <td><a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></td>
@@ -368,6 +421,11 @@
         <td>Developer backend (rehberce.com)</td>
         <td>Delivers the level catalogue and puzzle images</td>
         <td>Operated by the Developer. Standard web logs only. No personal data collected.</td>
+      </tr>
+      <tr>
+        <td>Developer realtime server (ingilizcekonusma.com)</td>
+        <td>Runs the optional Online VS rooms (nickname, room code, round reports; rooms live in memory only)</td>
+        <td>Operated by the Developer. Standard web logs only. No account or profile is created.</td>
       </tr>
     </tbody>
   </table>
@@ -432,6 +490,8 @@
     <li><strong>Level milestone</strong> &mdash; sent when you clear
       level 10, 20, 30, &hellip; (every tenth level), at most once per
       milestone per install.</li>
+    <li><strong>Online VS match completed</strong> &mdash; sent when
+      you finish an Online VS match (no nickname or room details).</li>
   </ul>
   <p>
     Alongside these events, Meta receives standard mobile attribution
@@ -528,7 +588,7 @@
     directly hold about you is effectively limited to what is on your
     device and short-lived server logs. To exercise any of these
     rights against the third parties listed above (Apple, Google,
-    Google AdMob, RevenueCat, Meta), please follow their published
+    Google AdMob, Google Firebase, RevenueCat, Meta), please follow their published
     procedures linked in section 5.
   </p>
 
@@ -536,7 +596,9 @@
   <p>
     Local data on your device is retained until you uninstall the
     App or clear its storage from system settings. Backend request
-    logs are retained for up to 30 days. RevenueCat retains your
+    logs (including those of the Online VS server) are kept for a
+    short time for diagnostics and abuse prevention; rooms of the
+    Online VS mode exist only in server memory while they are open. RevenueCat retains your
     purchase history for as long as the store keeps the corresponding
     receipt, so you can restore non-consumable purchases on a new
     device. Meta retains attribution events under its own retention
